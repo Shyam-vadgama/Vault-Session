@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "VaultSession",
+  "version": "1.0.0",
+  "description": "Securely export and import encrypted browser sessions (cookies) for seamless cross-browser transfers.",
+  "permissions": [
+    "cookies",
+    "downloads"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "vaultsession@opensource.dev"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

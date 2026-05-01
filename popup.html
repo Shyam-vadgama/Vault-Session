@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VaultSession - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h2>VaultSession</h2>
+      <p class="tagline">Secure Session Transfer</p>
+    </header>
+
+    <!-- Launcher View (Shown in small popup) -->
+    <div id="view-launcher" class="hidden">
+      <div class="launch-card">
+        <p>To ensure secure exports and imports work correctly on your OS, please open the full-screen dashboard.</p>
+        <button id="btn-launch-full" class="primary big-btn">Open Dashboard</button>
+      </div>
+    </div>
+
+    <!-- Main App View (Shown in full tab) -->
+    <div id="view-app" class="hidden">
+      <div class="form-group">
+        <label for="password">Encryption Password</label>
+        <input type="password" id="password" placeholder="Enter password to derive key..." autocomplete="current-password" />
+      </div>
+      
+      <div class="tabs">
+        <button id="tab-export" class="tab-btn active">Export</button>
+        <button id="tab-import" class="tab-btn">Import</button>
+        <button id="tab-debug" class="tab-btn">Verify</button>
+      </div>
+
+      <!-- Export Section -->
+      <div id="section-export" class="tab-content">
+        <div class="form-group">
+          <label>Scope Selection</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="scope" value="all" checked /> All Cookies
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="scope" value="specific" /> Specific Domains
+            </label>
+          </div>
+          <textarea id="domain-list" class="hidden" placeholder="e.g. github.com, google.com (comma separated)"></textarea>
+        </div>
+        <button id="btn-export" class="primary">Secure Export</button>
+      </div>
+
+      <!-- Import Section -->
+      <div id="section-import" class="tab-content hidden">
+        <div class="import-area">
+          <input type="file" id="file-import" accept=".session" class="hidden" />
+          <button id="btn-import-trigger" class="primary">Select .session File</button>
+          <p class="hint">Your data is decrypted locally using the password above.</p>
+        </div>
+      </div>
+
+      <!-- Debug/Verify Section -->
+      <div id="section-debug" class="tab-content hidden">
+        <div class="form-group">
+          <label>Manual Verification (Paste Data)</label>
+          <textarea id="debug-input" placeholder="Paste the encrypted string here to verify password..."></textarea>
+        </div>
+        <button id="btn-verify" class="secondary">Verify Integrity</button>
+        <div id="debug-output" class="hidden">
+          <p class="label-sm">Decrypted Preview:</p>
+          <pre id="debug-content"></pre>
+        </div>
+      </div>
+    </div>
+
+    <div id="status" class="status-msg"></div>
+
+    <footer>
+      <p>VaultSession is Open Source • Your data stays on your device</p>
+    </footer>
+  </div>
+
+  <script src="crypto.js"></script>
+  <script src="cookies.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

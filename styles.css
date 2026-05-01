@@ -1,0 +1,192 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 16px;
+  width: 350px; /* Default popup width */
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* When in full tab, remove fixed width */
+@media (min-width: 401px) {
+  body {
+    width: auto;
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #f3f4f6;
+  }
+  .container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #111827;
+  font-weight: 800;
+}
+
+/* Launcher View Styling */
+.launch-card {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.launch-card p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.big-btn {
+  width: 100%;
+  padding: 14px !important;
+  font-size: 1rem !important;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+input[type="password"], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+input[type="password"]:focus, textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.tabs {
+  display: flex;
+  background: #f3f4f6;
+  padding: 4px;
+  border-radius: 10px;
+  gap: 4px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: none;
+  background: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  background: white;
+  color: #2563eb;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+button {
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+button.primary:hover {
+  background-color: #1d4ed8;
+}
+
+button.secondary {
+  background-color: #10b981;
+  color: white;
+}
+
+button.secondary:hover {
+  background-color: #059669;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-align: center;
+  margin: 0;
+}
+
+pre {
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  overflow-x: auto;
+  max-height: 200px;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.status-msg {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 12px;
+  border-radius: 8px;
+  min-height: 20px;
+  word-wrap: break-word;
+  transition: all 0.3s;
+}
+
+.success { background-color: #ecfdf5; color: #065f46; border: 1px solid #d1fae5; }
+.error { background-color: #fef2f2; color: #991b1b; border: 1px solid #fee2e2; }
